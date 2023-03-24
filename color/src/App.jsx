@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import { Input } from './GlobalStyle';
 
 const App = () => {
   const [values, setValues] = useState({
@@ -20,13 +21,13 @@ const App = () => {
     <Container>
       <ColorPreview
         style={{
-          backgroundColor: `rgba(${values.red},${values.green},${values.blue})`,
+          backgroundColor: `rgb(${values.red},${values.green},${values.blue})`,
         }}
       ></ColorPreview>
       <div className='range'>
         <Color>
           <span>Red</span>
-          <input
+          <Input
             type='range'
             name='red'
             min='0'
@@ -37,7 +38,7 @@ const App = () => {
         </Color>
         <Color>
           <span>Green</span>
-          <input
+          <Input
             type='range'
             name='green'
             min='0'
@@ -48,7 +49,7 @@ const App = () => {
         </Color>
         <Color>
           <span>Blue</span>
-          <input
+          <Input
             type='range'
             name='blue'
             min='0'
