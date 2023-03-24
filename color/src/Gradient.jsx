@@ -2,7 +2,8 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import { Input } from './GlobalStyle';
 
-const App = () => {
+
+const Gradient = () => {
   const [values, setValues] = useState({
     reds: 255,
     greens: 0,
@@ -112,7 +113,8 @@ const App = () => {
         </End>
       </Range>
       <Btn>
-      code: linear-gradient({values.deg}deg, rgb({values.reds},{values.greens},{values.blues}), rgb({values.rede},{values.greene},{values.bluee}))
+        code: linear-gradient({values.deg}deg, rgb({values.reds},{values.greens}
+        ,{values.blues}), rgb({values.rede},{values.greene},{values.bluee}))
       </Btn>
     </Container>
   );
@@ -175,4 +177,4 @@ const Btn = styled.button`
   border-radius: 15px;
 `;
 
-export default App;
+export default Gradient;
