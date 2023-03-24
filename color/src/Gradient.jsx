@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import { Input } from './GlobalStyle';
-
 
 const Gradient = () => {
   const [values, setValues] = useState({
@@ -23,158 +21,117 @@ const Gradient = () => {
   };
 
   return (
-    <Container>
-      <ColorPreview
-        style={{
-          background: `linear-gradient(${values.deg}deg, rgb(${values.reds},${values.greens},${values.blues}), rgb(${values.rede},${values.greene},${values.bluee}))`,
-        }}
-      ></ColorPreview>
-      <Range>
-        <Start>
-          <Color>
-            <span>Red</span>
-            <Input
-              type='range'
-              name='reds'
-              min='0'
-              max='255'
-              value={values.reds}
-              onChange={handleChange}
-            />
-          </Color>
-          <Color>
-            <span>Green</span>
-            <Input
-              type='range'
-              name='greens'
-              min='0'
-              max='255'
-              value={values.greens}
-              onChange={handleChange}
-            />
-          </Color>
-          <Color>
-            <span>Blue</span>
-            <Input
-              type='range'
-              name='blues'
-              min='0'
-              max='255'
-              value={values.blues}
-              onChange={handleChange}
-            />
-          </Color>
-        </Start>
-        <Deg>
-          <span>Deg</span>
-          <Input
-            type='range'
-            name='deg'
-            min='0'
-            max='360'
-            value={values.deg}
-            onChange={handleChange}
-          />
-        </Deg>
-        <End>
-          <Color>
-            <span>Red</span>
-            <Input
-              type='range'
-              name='rede'
-              min='0'
-              max='255'
-              value={values.rede}
-              onChange={handleChange}
-            />
-          </Color>
-          <Color>
-            <span>Green</span>
-            <Input
-              type='range'
-              name='greene'
-              min='0'
-              max='255'
-              value={values.greene}
-              onChange={handleChange}
-            />
-          </Color>
-          <Color>
-            <span>Blue</span>
-            <Input
-              type='range'
-              name='bluee'
-              min='0'
-              max='255'
-              value={values.bluee}
-              onChange={handleChange}
-            />
-          </Color>
-        </End>
-      </Range>
-      <Btn>
-        code: linear-gradient({values.deg}deg, rgb({values.reds},{values.greens}
-        ,{values.blues}), rgb({values.rede},{values.greene},{values.bluee}))
-      </Btn>
-    </Container>
+    <div className='container d-flex flex-column align-items-center'>
+      <div className='card p-2 d-flex align-items-center'>
+        <ColorPreview
+          style={{
+            background: `linear-gradient(${values.deg}deg, rgb(${values.reds},${values.greens},${values.blues}), rgb(${values.rede},${values.greene},${values.bluee}))`,
+          }}
+        />
+        <div className='container d-flex flex-column align-items-center'></div>
+        <div class='container text-center my-4'>
+          <div class='row'>
+            <div class='col-sm-4'>
+              <div className='row'>
+                <div className='col-10'>
+                  <span>R</span>
+                  <input
+                    className='form-range'
+                    type='range'
+                    name='reds'
+                    min='0'
+                    max='255'
+                    value={values.reds}
+                    onChange={handleChange}
+                  />
+                  <span>G</span>
+                  <input
+                    className='form-range'
+                    type='range'
+                    name='greens'
+                    min='0'
+                    max='255'
+                    value={values.greens}
+                    onChange={handleChange}
+                  />
+                  <span>B</span>
+                  <input
+                    className='form-range'
+                    type='range'
+                    name='blues'
+                    min='0'
+                    max='255'
+                    value={values.blues}
+                    onChange={handleChange}
+                  />
+                </div>
+              </div>
+            </div>
+            <div class='col-sm-4'>
+              <div class='row'>
+                <div class='col-10'>
+                  <span>Deg</span>
+                  <input
+                    className='form-range'
+                    type='range'
+                    name='deg'
+                    min='0'
+                    max='360'
+                    value={values.deg}
+                    onChange={handleChange}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className='col-sm-4'>
+              <div className='row'>
+                <div className='col-10'>
+                  <span>R</span>
+                  <input
+                    className='form-range'
+                    type='range'
+                    name='rede'
+                    min='0'
+                    max='255'
+                    value={values.rede}
+                    onChange={handleChange}
+                  />
+                  <span>G</span>
+                  <input
+                    className='form-range'
+                    type='range'
+                    name='greene'
+                    min='0'
+                    max='255'
+                    value={values.greene}
+                    onChange={handleChange}
+                  />
+                  <span>B</span>
+                  <input
+                    className='form-range'
+                    type='range'
+                    name='bluee'
+                    min='0'
+                    max='255'
+                    value={values.bluee}
+                    onChange={handleChange}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button className='btn btn-light'>
+          linear-gradient({values.deg}deg, rgb({values.reds},{values.greens},
+          {values.blues}), rgb({values.rede},{values.greene},{values.bluee}))
+        </button>
+      </div>
+    </div>
   );
 };
 
-const Container = styled.div`
-  padding: 20px;
-  width: 80vw;
-  border: 1px solid #000;
-  border-radius: 20px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-
 const ColorPreview = styled.div`
-  width: 250px;
+  width: 350px;
   height: 200px;
 `;
-
-const Range = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  margin: 10px;
-`;
-
-const Start = styled.div``;
-const Deg = styled.div`
-  span {
-    margin-right: 10px;
-  }
-`;
-const End = styled.div``;
-
-const Color = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin: 10px;
-  span {
-    margin-right: 10px;
-  }
-`;
-
-const Btn = styled.button`
-  width: 60%;
-  padding: 10px;
-  margin: 10px;
-  background-color: lightgray;
-  :hover,
-  :active {
-    background-color: gray;
-    color: white;
-  }
-  border: none;
-  border-radius: 15px;
-`;
-
 export default Gradient;
