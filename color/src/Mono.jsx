@@ -77,7 +77,7 @@ const Mono = () => {
             </div>
           </div>
           <button className='btn btn-light p-10px w-100'>
-            rgb: ({values.red}, {values.green}, {values.blue});
+            rgb({values.red}, {values.green}, {values.blue});
           </button>
         </div>
       </div>

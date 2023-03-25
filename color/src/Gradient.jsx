@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Gradient = () => {
@@ -121,11 +122,14 @@ const Gradient = () => {
             </div>
           </div>
         </div>
-        <button className='btn btn-light'>
+        <button className='btn btn-light p-10px w-100'>
           linear-gradient({values.deg}deg, rgb({values.reds},{values.greens},
           {values.blues}), rgb({values.rede},{values.greene},{values.bluee}))
         </button>
       </div>
+      <Link to='/'>
+        <button className='btn btn-dark btn-sm p-10px mt-2'>뒤로가기</button>
+      </Link>
     </div>
   );
 };
