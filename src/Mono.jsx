@@ -18,7 +18,7 @@ const Mono = () => {
   };
 
   return (
-    <div className='container d-flex flex-column align-items-center'>
+    <div className='container d-flex flex-column align-items-center py-4'>
       <div className='card p-2'>
         <ColorPreview
           style={{

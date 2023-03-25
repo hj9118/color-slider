@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const App = () => {
   return (
-    <div className='container d-flex flex-column align-items-center m-auto'>
+    <div className='container d-flex flex-column align-items-center m-auto pt-5'>
       <h1 className='my-2'>Color Slider - 색상 확인 슬라이더</h1>
       <div className='buttons'>
         <Link to='/mono'>

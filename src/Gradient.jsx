@@ -22,8 +22,8 @@ const Gradient = () => {
   };
 
   return (
-    <div className='container d-flex flex-column align-items-center'>
-      <div className='card p-2 d-flex align-items-center'>
+    <div className='container d-flex flex-column align-items-center p-5'>
+      <div className='card p-2 d-flex align-items-center py-4'>
         <ColorPreview
           style={{
             background: `linear-gradient(${values.deg}deg, rgb(${values.reds},${values.greens},${values.blues}), rgb(${values.rede},${values.greene},${values.bluee}))`,
